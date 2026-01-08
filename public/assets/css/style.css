@@ -1,0 +1,1035 @@
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham-light-webfont.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham-book-webfont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham-medium-webfont.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/gotham-bold-webfont.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-main: #402640;
+  --bg-dark-1: #120514;
+  --bg-dark-2: #1a071d;
+  --bg-dark-3: #2a0b2f;
+  --bg-dark-4: #2c0f29;
+  --bg-dark-5: #170617;
+
+  --band: #8a5d8e;
+
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.7);
+  --text-muted-2: rgba(255, 255, 255, 0.55);
+
+  --accent-pink: #e31b6d;
+  --accent-green: #2bd5a6;
+
+  --frame-max: 1600px;
+  --frame-pad: 215px;
+
+  /* safe fallback for places you used var(--fs-tag) */
+  --fs-tag: 13px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Gotham", "Montserrat", "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.visually-hidden-focusable:focus {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  color: #000;
+  border-radius: 0.5rem;
+}
+
+.ir-container {
+  max-width: var(--frame-max);
+  padding-left: var(--frame-pad);
+  padding-right: var(--frame-pad);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ir-nav {
+  padding-left: 14px;
+  position: relative;
+  z-index: 60;
+}
+
+.ir-brand {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  color: #fff !important;
+  width: 115px;
+  height: 14.25px;
+}
+
+.ir-nav .navbar-collapse {
+  justify-content: flex-start;
+}
+
+.ir-navlinks {
+  gap: 26px;
+}
+
+.ir-navlinks .nav-link {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  color: #fff !important;
+  opacity: 0.9;
+}
+
+.ir-navlinks .nav-link:hover {
+  opacity: 1;
+}
+
+.ir-hero {
+  background: var(--bg-dark-4);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.ir-hero-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.ir-hero-inner {
+  position: relative;
+  padding: 56px 0 36px;
+}
+
+.ir-nav .dropdown-menu {
+  background: rgba(18, 5, 20, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  padding: 12px 0;
+}
+
+.ir-hero-title-badge {
+  position: relative;
+  display: inline-block;
+}
+
+.ir-coming-badge {
+  position: absolute;
+  right: clamp(-70px, -4vw, -46px);
+  top: clamp(-27px, -4vw, -12px);
+  width: clamp(58px, 9vw, 78px);
+  height: auto;
+  pointer-events: none;
+}
+
+.ir-logo-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ir-logo-line img {
+  width: 42px;
+  height: 40px;
+}
+
+.ir-logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 0.8;
+}
+
+.ir-logo-accent {
+  font-size: 22px;
+  color: #e01a59;
+  font-weight: 400;
+}
+
+.ir-title-pdf {
+  font-weight: 300;
+}
+
+.ir-logo-sub {
+  font-weight: 300;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ir-kicker {
+  font-size: 18px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ir-h1 {
+  font-size: 3.125rem;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.ir-h1-muted {
+  color: #c6aac6;
+}
+
+.ir-coming {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.ir-hero-graphic-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: scale(0.9);
+  transform-origin: top right;
+  width: clamp(520px, 45vw, 720px);
+  height: clamp(380px, 32vw, 520px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ---------------- SIGNUP BAND ---------------- */
+.ir-signup-band {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(90deg, #8e608e 0%, #402640 71%, #371a34 100%);
+  padding: 28px 0;
+}
+
+.ir-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 36px;
+  border-radius: 999px;
+  transition: #cf3b63 0.25s ease, transform 0.15s ease;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ir-cta-btn:hover {
+  background-color: #c9041e;
+}
+
+.ir-cta-btn:active {
+  transform: scale(0.97);
+}
+
+.ir-cta-btn:hover .ir-cta-arrow {
+  border-left-color: #fff;
+}
+
+.ir-cta-arrow {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 9px solid #fff;
+}
+
+.ir-band-title {
+  font-weight: 800;
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.ir-band-sub {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.ir-why-icons {
+  position: relative;
+  width: 270px;
+  height: 180px;
+}
+
+.ir-why-icons img {
+  position: absolute;
+  height: auto;
+  display: block;
+}
+
+.ir-why-html {
+  left: 0;
+  top: 12px;
+  width: 115px;
+  z-index: 4;
+}
+
+.ir-why-cpp {
+  left: 70px;
+  top: 42px;
+  width: 115px;
+  z-index: 3;
+}
+
+.ir-why-pdf {
+  left: 150px;
+  top: 42px;
+  width: 118px;
+  z-index: 2;
+}
+
+/* ---------------- CTA FORMS ---------------- */
+.ir-pill-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border-radius: 999px;
+  padding-left: 8px;
+  max-width: 530px;
+  max-height: 64px;
+}
+
+.ir-pill-form input {
+  flex: 1;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding-left: 14px;
+  font-size: 14px;
+  border-radius: 999px;
+  color: #431f43;
+}
+
+.ir-pill-form button {
+  height: 64px;
+  width: 180px;
+  padding: 0 18px 0 2px;
+  border: none;
+  border-radius: 79px;
+  background: var(--accent-pink);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.ir-cta-form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 530px;
+  height: 64px;
+  padding: 1px 1px 1px 16px;
+  background: #fff;
+  border-radius: 999px;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.ir-footer-form {
+  margin-top: 30px;
+  width: 600px;
+  height: 56px;
+}
+
+.ir-cta-input {
+  flex: 1 1 auto;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 500;
+  color: #431f43;
+}
+
+.ir-cta-input::placeholder {
+  color: rgba(42, 18, 49, 0.55);
+}
+
+.ir-cta-btn {
+  flex: 0 0 auto;
+  height: 100%;
+  padding: 0 32px;
+  width: 180px;
+  border: 0;
+  border-radius: 999px;
+  background: #d92c6d;
+  color: #fff;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------------- TAGS ---------------- */
+.ir-band-tags {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ir-tag {
+  width: 146px;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #c6aac6;
+  color: #8f618f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ir-tagline {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ---------------- SECTIONS ---------------- */
+.ir-section {
+  padding: 54px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ir-section-early {
+  background-color: var(--bg-dark-4);
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.ir-section-graphic {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%) scale(1.5);
+  width: 100%;
+  max-width: 1184px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ir-section-graphic img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.85;
+}
+
+.ir-section .ir-container {
+  position: relative;
+  z-index: 2;
+}
+
+.ir-section-title {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.ir-section-title span {
+  color: #c6aac6;
+}
+
+.ir-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ir-bubble {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  background: var(--accent-green);
+  color: #0b2b22;
+  font-size: 10px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(-10deg);
+}
+
+.ir-features {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.ir-feature {
+  font-size: 13px;
+  line-height: 26px;
+  font-weight: 300;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ir-body,
+.ir-paragraph {
+  font-size: 16px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ir-body {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* ---------------- PILL CARDS ---------------- */
+.ir-pill-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.ir-pill-badge {
+  height: 36px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 126px;
+  background: #c6aac6;
+  color: #331433;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ir-pill-label {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+.ir-pill-label span {
+  display: block;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---------------- EARLY ACCESS ---------------- */
+.ir-earlyaccess-title {
+  font-size: 50px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.ir-earlyaccess-text {
+  max-width: 980px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.ir-earlyaccess-pills {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.ir-pill-card--early {
+  flex: 1 1 0;
+  justify-content: flex-start;
+  gap: 18px;
+  height: 88px;
+  padding: 0 28px;
+  border-radius: 122px;
+  background: rgba(23, 6, 23, 0.8);
+  border: 3px solid #431f43;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.ir-pill-java {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #c6aac6;
+  color: #170617;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.ir-pill-badge--early {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #331433;
+  color: #c6aac6;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.ir-pill-label--early .ir-pdf {
+  font-weight: 300;
+}
+
+.ir-pill-label--early {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.ir-pill-label--early span {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---------------- FOOTER SIGNUP ---------------- */
+.ir-footer-signup,
+.ir-library-paragraph {
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #2a0d2f 0%, #1a071d 100%);
+}
+
+.ir-footer-signup::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(23, 6, 23, 0.3);
+  z-index: 1;
+}
+
+.ir-footer-signup .container {
+  position: relative;
+  z-index: 2;
+  padding: 20px 0px;
+}
+
+.ir-footer-signup .ir-section-title {
+  color: #fff;
+  font-weight: 600;
+}
+
+.ir-footer-signup .ir-pill-form {
+  max-width: 520px;
+}
+
+.ir-pill-form-center {
+  max-width: 560px;
+}
+
+/* ---------- <= 1399.98px (laptop) ---------- */
+@media (max-width: 1399.98px) and (min-width: 792px) {
+  :root {
+    --frame-pad: 48px;
+  }
+
+  .ir-hero-graphic-wrap {
+    right: -10px;
+    top: -10px;
+    transform: scale(0.8);
+    transform-origin: top right;
+  }
+
+  .ir-h1 {
+    font-size: 56px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  .ir-h1-muted {
+    color: rgba(255, 255, 255, 0.65);
+  }
+}
+
+/* ---------- <= 991.98px (tablet + mobile) ---------- */
+@media (max-width: 991.98px) {
+  :root {
+    --frame-pad: 24px;
+  }
+
+  /* HERO: hide overlay graphic on smaller screens */
+  .ir-hero-graphic-wrap {
+    display: none;
+  }
+
+  .ir-hero-inner .ir-container {
+    padding-right: var(--frame-pad);
+  }
+
+  .ir-h1 {
+    font-size: 40px;
+  }
+
+  .ir-nav {
+    padding-left: var(--frame-pad);
+    padding-right: var(--frame-pad);
+  }
+
+  .ir-nav .navbar-toggler {
+    margin-left: auto;
+    border: 0;
+    box-shadow: none !important;
+  }
+
+  .ir-nav .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background: rgba(18, 5, 20, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+
+    padding: 14px var(--frame-pad);
+    margin-top: 10px;
+
+    z-index: 999;
+  }
+
+  .ir-nav .navbar-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .ir-navlinks {
+    gap: 0 !important;
+  }
+
+  .ir-navlinks .nav-link {
+    padding: 10px 0;
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .ir-nav .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    margin-top: 8px;
+    padding: 8px;
+  }
+
+  .ir-coming-badge {
+    right: -38px;
+    top: -14px;
+    width: 56px;
+  }
+
+  .ir-pill-form {
+    max-width: 100%;
+  }
+
+  /* WHY icons */
+  .ir-why-icons {
+    width: 220px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .ir-why-html,
+  .ir-why-cpp,
+  .ir-why-pdf {
+    width: 100px;
+  }
+
+  .ir-why-cpp {
+    left: 60px;
+  }
+
+  .ir-why-pdf {
+    left: 125px;
+  }
+
+  /* EARLY ACCESS */
+  .ir-earlyaccess-title {
+    font-size: 40px;
+  }
+
+  .ir-earlyaccess-pills {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .ir-pill-card--early {
+    width: 100%;
+    height: auto;
+    min-height: 72px;
+    padding: 14px 16px;
+    gap: 12px;
+    flex-wrap: wrap;
+    border-radius: 28px;
+  }
+
+  .ir-pill-java,
+  .ir-pill-badge--early {
+    padding: 8px 14px;
+    font-size: var(--fs-tag);
+    letter-spacing: 0.02em;
+  }
+
+  .ir-pill-card--early .ir-logo-text {
+    font-size: clamp(1.05rem, 0.95rem + 0.6vw, 1.25rem);
+    line-height: 1.1;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .ir-pill-card--early .ir-title-pdf {
+    font-weight: 300;
+  }
+
+  .ir-pill-card--early .ir-logo-sub {
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.05rem);
+    white-space: nowrap;
+  }
+}
+
+/* ---------- <= 600px (CTA form only) ---------- */
+@media (max-width: 600px) {
+  .ir-cta-form {
+    height: auto;
+    padding: 12px;
+    border-radius: 24px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ir-cta-input {
+    height: 56px;
+    padding: 0 14px;
+  }
+
+  .ir-cta-btn {
+    height: 56px;
+    width: 100%;
+    border-radius: 18px;
+    justify-content: center;
+  }
+}
+
+/* ---------- <= 575.98px (small mobile) ---------- */
+@media (max-width: 575.98px) {
+  .ir-band-title {
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .ir-band-sub {
+    font-size: 16px;
+    line-height: 1.35;
+    margin-bottom: 18px;
+  }
+
+  .ir-signup-band .ir-pill-form {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 12px;
+    border-radius: 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .ir-signup-band .ir-pill-form input {
+    height: 48px;
+    font-size: 14px;
+    padding: 0 14px;
+    border-radius: 14px;
+  }
+
+  .ir-signup-band .ir-pill-form button {
+    width: 100%;
+    height: 48px;
+    font-size: 15px;
+    border-radius: 16px;
+    padding: 0 16px;
+  }
+
+  .ir-pill-form {
+    flex-direction: column;
+    border-radius: 22px;
+  }
+
+  .ir-pill-form button {
+    width: 100%;
+  }
+
+  .ir-footer-signup {
+    padding: 36px 0;
+  }
+
+  .ir-section-title {
+    font-size: 26px;
+  }
+
+  .ir-footer-signup .ir-section-title {
+    font-size: 26px;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .ir-footer-signup .ir-container {
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+  }
+
+  .ir-footer-signup .ir-pill-form,
+  .ir-footer-signup .ir-cta-form {
+    max-width: 100%;
+    height: auto;
+    padding: 12px;
+    border-radius: 22px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ir-footer-signup .ir-cta-btn,
+  .ir-footer-signup button {
+    width: 100%;
+    height: 48px;
+    font-size: 15px;
+    border-radius: 16px;
+    justify-content: center;
+  }
+
+  .ir-footer-signup .ir-cta-input,
+  .ir-footer-signup input {
+    height: 48px;
+    font-size: 14px;
+    padding: 0 14px;
+    text-align: left;
+  }
+
+  .ir-pill-card--early .ir-logo-line {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .ir-pill-card--early .ir-logo-text {
+    font-size: 18px;
+    line-height: 1.15;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 120px;
+  }
+
+  .ir-pill-card--early .ir-logo-sub,
+  .ir-pill-label--early span {
+    font-size: 14px;
+    white-space: normal;
+  }
+
+  .ir-pill-card--early {
+    justify-content: space-around;
+    text-align: center;
+    max-width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .ir-pill-card--early .ir-logo-text {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 390px) {
+  .ir-section-early .ir-earlyaccess-title,
+  .ir-section-early,
+  .ir-section-title {
+    font-size: 26px;
+  }
+
+  .ir-pill-card--early .ir-logo-text {
+    font-size: 17px;
+  }
+}
